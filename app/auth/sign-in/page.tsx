@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
+import { signIn } from "@/actions";
 
 export default function SignInPage() {
   const [inputs, setInputs] = useState({
@@ -16,7 +17,16 @@ export default function SignInPage() {
       return alert("Both fields are required");
     }
 
-    alert(`email: ${inputs.email}\npassword: ${inputs.password}`);
+    signIn(inputs.email, inputs.password)
+      .then((user) => {
+        console.log(user);
+      })
+      .catch(() => {
+        alert("Invalid email or password");
+      })
+      .finally(() => {
+        setInputs({ email: "", password: "" });
+      });
   };
 
   const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
