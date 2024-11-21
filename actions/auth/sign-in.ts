@@ -8,7 +8,7 @@ export async function signIn(
 ): Promise<{ userId: string; email: string }> {
   const config: AxiosRequestConfig = {
     method: "POST",
-    url: `http://host.docker.internal:3001/api/auth/sign-in`,
+    url: `http://${process.env.API_URL}/api/auth/sign-in`,
     data: { email, password },
   };
 
