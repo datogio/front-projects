@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-export default function SignUpPage() {
+export default function ResetPasswordPage() {
   return (
     <div className="bg-gray-800 w-[30vw] flex flex-col items-center p-10 rounded-xl gap-10">
       <h1 className="text-5xl">Reset Password</h1>
