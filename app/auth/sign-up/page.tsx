@@ -17,8 +17,19 @@ export default function SignUpPage() {
   const handleFormSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
 
-    if (!inputs.email || !inputs.password) {
-      return alert("Both fields are required");
+    if (
+      !inputs.email ||
+      !inputs.confirmEmail ||
+      !inputs.password ||
+      !inputs.confirmPassword
+    ) {
+      return alert("All fields are requreid");
+    }
+    if (inputs.email !== inputs.confirmEmail) {
+      return alert("Emails don't match");
+    }
+    if (inputs.password !== inputs.confirmPassword) {
+      return alert("Passwords don't match");
     }
 
     signUp(inputs.email, inputs.password)
@@ -26,7 +37,7 @@ export default function SignUpPage() {
         router.push("/");
       })
       .catch(() => {
-        alert("Invalid email or password");
+        alert("User already registered");
       })
       .finally(() => {
         setInputs({
