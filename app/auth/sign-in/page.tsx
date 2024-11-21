@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SignInPage() {
   return (
     <div className="bg-gray-800 w-[30vw] flex flex-col items-center p-10 rounded-xl gap-10">
@@ -16,18 +18,24 @@ export default function SignInPage() {
           placeholder="Enter your password"
         />
         <div>
-          <span className="cursor-pointer transition hover:text-gray-300">
+          <Link
+            href="/auth/reset-password"
+            className="cursor-pointer transition hover:text-gray-300"
+          >
             Forgot password?
-          </span>
+          </Link>
         </div>
         <button className="bg-black p-3 rounded-lg text-lg font-bold transition hover:scale-105">
           Sign In
         </button>
         <div className="flex justify-between">
           <span>{"Don't have an account?"}</span>
-          <span className="cursor-pointer transition hover:text-gray-300">
+          <Link
+            href="/auth/sign-up"
+            className="cursor-pointer transition hover:text-gray-300"
+          >
             Sign Up
-          </span>
+          </Link>
         </div>
       </form>
     </div>

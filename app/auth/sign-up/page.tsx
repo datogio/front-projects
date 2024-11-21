@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SignUpPage() {
   return (
     <div className="bg-gray-800 w-[30vw] flex flex-col items-center p-10 rounded-xl gap-10">
@@ -32,9 +34,12 @@ export default function SignUpPage() {
         </button>
         <div className="flex justify-between">
           <span>{"Already have an account?"}</span>
-          <span className="cursor-pointer transition hover:text-gray-300">
+          <Link
+            href="/auth/sign-in"
+            className="cursor-pointer transition hover:text-gray-300"
+          >
             Sign In
-          </span>
+          </Link>
         </div>
       </form>
     </div>
