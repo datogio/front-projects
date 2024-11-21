@@ -9,14 +9,15 @@ export function SignOutLink() {
   const handleSignOut = () => {
     const confirmSignOut = confirm("Are you sure?");
 
-    confirmSignOut &&
-      signOut()
-        .then(() => {
-          router.push("/auth/sign-in");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    if (!confirmSignOut) return;
+
+    signOut()
+      .then(() => {
+        router.push("/auth/sign-in");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
