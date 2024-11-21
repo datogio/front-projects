@@ -1,0 +1,8 @@
+*.yaml
+.git
+.env
+.next
+node_modules
+Dockerfile
+docker-compose.yaml
+k8s
