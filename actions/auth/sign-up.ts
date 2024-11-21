@@ -3,13 +3,13 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { cookies } from "next/headers";
 
-export async function signIn(
+export async function signUp(
   email: string,
   password: string
 ): Promise<{ userId: string; email: string }> {
   const config: AxiosRequestConfig = {
     method: "POST",
-    url: `http://${process.env.API_URL}/api/auth/sign-in`,
+    url: `http://${process.env.API_URL}/api/auth/sign-up`,
     data: { email, password },
   };
 

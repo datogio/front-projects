@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
 import { signIn } from "@/actions";
+import { useRouter } from "next/navigation";
 
 export default function SignInPage() {
+  const router = useRouter();
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -18,8 +20,8 @@ export default function SignInPage() {
     }
 
     signIn(inputs.email, inputs.password)
-      .then((user) => {
-        console.log(user);
+      .then(() => {
+        router.push("/");
       })
       .catch(() => {
         alert("Invalid email or password");
