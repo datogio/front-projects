@@ -13,9 +13,20 @@ export default function SignInPage() {
           type="password"
           placeholder="Enter your password"
         />
+        <div>
+          <span className="cursor-pointer transition hover:text-gray-300">
+            Forgot password?
+          </span>
+        </div>
         <button className="bg-black p-3 rounded-lg text-lg font-bold transition hover:scale-105">
           Sign In
         </button>
+        <div className="flex justify-between">
+          <span>{"Don't have an account?"}</span>
+          <span className="cursor-pointer transition hover:text-gray-300">
+            Sign Up
+          </span>
+        </div>
       </form>
     </div>
   );
