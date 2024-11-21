@@ -6,11 +6,13 @@ export default function SignInPage() {
         <input
           className="p-2 rounded-lg text-lg text-black outline-none"
           type="email"
+          name="email"
           placeholder="Enter your email"
         />
         <input
           className="p-2 rounded-lg text-lg text-black outline-none"
           type="password"
+          name="password"
           placeholder="Enter your password"
         />
         <div>
