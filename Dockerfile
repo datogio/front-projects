@@ -13,6 +13,7 @@ COPY postcss.config.mjs .
 COPY tailwind.config.ts .
 COPY tsconfig.json .
 COPY app ./app
+COPY actions ./actions
 COPY public ./public
 
 RUN yarn run build

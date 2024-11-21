@@ -6,7 +6,9 @@ services:
       target: development
     ports:
       - "3000:3000"
+    env_file: .env
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./app:/usr/src/app/app
+      - ./public:/usr/src/app/public
+      - ./actions:/usr/src/app/actions
     command: yarn run dev
