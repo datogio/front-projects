@@ -1,6 +1,7 @@
 "use server";
 
 import axios, { AxiosRequestConfig } from "axios";
+import { cookies } from "next/headers";
 
 export async function signIn(
   email: string,
@@ -13,9 +14,15 @@ export async function signIn(
   };
 
   try {
-    const reponse = await axios(config);
-    // TODO: set token cookie here
-    return { userId: reponse.data.userId, email: reponse.data.email };
+    const response = await axios(config);
+
+    const cookie = await cookies();
+    cookie.set({
+      name: "token",
+      value: response.data.token,
+      httpOnly: true,
+    });
+    return { userId: response.data.userId, email: response.data.email };
   } catch (err: any) {
     throw new Error(err);
   }
