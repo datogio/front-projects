@@ -11,4 +11,5 @@ services:
       - ./app:/usr/src/app/app
       - ./public:/usr/src/app/public
       - ./actions:/usr/src/app/actions
+      - ./components:/usr/src/app/components
     command: yarn run dev

@@ -16,6 +16,7 @@ COPY tsconfig.json .
 COPY middleware.ts .
 COPY app ./app
 COPY actions ./actions
+COPY components ./components
 COPY public ./public
 
 RUN yarn run build
