@@ -3,7 +3,7 @@
 import { signOut } from "@/actions";
 import { useRouter } from "next/navigation";
 
-export function SignOut() {
+export function SignOutLink() {
   const router = useRouter();
 
   const handleSignOut = () => {

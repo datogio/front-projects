@@ -1,9 +1,9 @@
-import { SignOut } from "@/components";
+import { SignOutLink } from "@/components";
 
 export default function HomePage() {
   return (
     <div>
-      <SignOut />
+      <SignOutLink />
     </div>
   );
 }
