@@ -8,7 +8,6 @@ COPY yarn.lock .
 RUN yarn install
 
 COPY .eslintrc.json .
-COPY next-env.d.ts .
 COPY next.config.ts .
 COPY postcss.config.mjs .
 COPY tailwind.config.ts .
