@@ -14,6 +14,7 @@ export async function signIn(
 
   try {
     const reponse = await axios(config);
+    // TODO: set token cookie here
     return { userId: reponse.data.userId, email: reponse.data.email };
   } catch (err: any) {
     throw new Error(err);
